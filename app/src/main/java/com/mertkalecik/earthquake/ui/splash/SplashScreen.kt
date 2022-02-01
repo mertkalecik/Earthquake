@@ -18,8 +18,10 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.mertkalecik.earthquake.navigation.Screen
+import com.mertkalecik.earthquake.ui.home.HomeViewModel
 import com.mertkalecik.earthquake.ui.theme.Purple700
 import kotlinx.coroutines.delay
 

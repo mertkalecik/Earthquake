@@ -1,15 +1,18 @@
+# Created by .gitignore support plugin (hsz.mobi)
+/.idea/*
+# Do not ignore code style config
+!/.idea/codeStyles
+build
+reports
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
 local.properties
+signing.properties
+.gradle/
+.navigation/
+*.hprof
+*.txt
+*.apk
+captures/
+*.log
+*.DS_STORE
+!distribution_groups.txt

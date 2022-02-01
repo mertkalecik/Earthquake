@@ -1,15 +1,18 @@
 package com.mertkalecik.earthquake.exts
 
+import androidx.activity.ComponentActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.mertkalecik.earthquake.base.BaseViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
-
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
@@ -23,10 +26,11 @@ fun <T> Flow<T>.collectIn(
     collect { action(it) }
 }
 
-public fun LifecycleOwner.addRepeatingJob(
+private fun LifecycleOwner.addRepeatingJob(
     state: Lifecycle.State,
     coroutineContext: CoroutineContext = EmptyCoroutineContext,
     block: suspend CoroutineScope.() -> Unit
 ): Job = lifecycleScope.launch(coroutineContext) {
     lifecycle.repeatOnLifecycle(state, block)
 }
+
