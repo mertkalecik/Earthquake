@@ -1,35 +1,30 @@
-package com.mertkalecik.earthquake
+package com.mertkalecik.earthquake.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.navigation.compose.rememberNavController
 import com.mertkalecik.earthquake.data.Event
-import com.mertkalecik.earthquake.navigation.SetupNavGraph
 import com.mertkalecik.earthquake.ui.home.HomeViewModel
+import com.mertkalecik.earthquake.ui.main.MainScreen
+import com.mertkalecik.earthquake.ui.main.MainViewModel
 import com.mertkalecik.earthquake.ui.theme.EarthquakeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    private val viewModel: HomeViewModel by viewModels()
+    val viewModel : MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             EarthquakeTheme {
-                val navController = rememberNavController()
+                val state = viewModel.getUIState()
 
-                SetupNavGraph(navController = navController, ::observeEvent)
-
+                state.value.uiState.earthquakeUIModel?.dataList?.let {
+                    MainScreen()
+                }
             }
         }
     }
-
-    private fun observeEvent(event: Event) =
-        when (event) {
-            is HomeViewModel.HomeEvent.NavigateToHome -> Unit
-            else -> Unit
-        }
 }

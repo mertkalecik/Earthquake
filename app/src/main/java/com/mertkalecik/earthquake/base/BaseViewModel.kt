@@ -22,9 +22,9 @@ abstract class BaseViewModel<S: EarthquakeState, E: Event> constructor(initialSt
 
     // State Flows
     private val _stateFlow = MutableStateFlow(State(initialState))
-    val stateFlow: StateFlow<State<S>> get() = _stateFlow
-
-    val currentSate: S get() = _stateFlow.value.uiState
+    private val stateFlow: StateFlow<State<S>> get() = _stateFlow
+    // Current State
+    private val currentSate: S get() = _stateFlow.value.uiState
 
     @Composable
     fun getUIState() = stateFlow.collectAsState()

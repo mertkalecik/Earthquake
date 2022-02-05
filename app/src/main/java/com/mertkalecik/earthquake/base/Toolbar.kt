@@ -32,3 +32,15 @@ fun EqToolbar(
         elevation = 2.dp
     )
 }
+
+@Composable
+fun EqSimpleToolbar(
+    title: String
+) {
+    TopAppBar(
+        title = { Text(text = title, color = Color.White) },
+        backgroundColor = Purple700,
+        contentColor = Color.Gray,
+        elevation = 2.dp
+    )
+}

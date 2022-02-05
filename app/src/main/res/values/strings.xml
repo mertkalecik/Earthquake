@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Earthquake</string>
+    <string name="google_maps_api_key" translatable="false">AIzaSyBGXNvAlINIFfHLjx8RDO0TAoXiyKGcax8</string>
 </resources>

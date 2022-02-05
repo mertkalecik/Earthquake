@@ -18,16 +18,16 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.mertkalecik.earthquake.navigation.Screen
-import com.mertkalecik.earthquake.ui.home.HomeViewModel
 import com.mertkalecik.earthquake.ui.theme.Purple700
 import kotlinx.coroutines.delay
 
 
 @Composable
-fun SplashScreen(navHostController: NavHostController) {
+fun SplashScreen(
+    onReady: () -> Unit
+) {
     var startAnimation by remember { mutableStateOf(false) }
     val alphaAnim = animateFloatAsState(
         targetValue = if (startAnimation) 1F else 0F,
@@ -39,8 +39,7 @@ fun SplashScreen(navHostController: NavHostController) {
     LaunchedEffect(key1 = true) {
         startAnimation = true
         delay(2000)
-        navHostController.popBackStack()
-        navHostController.navigate(Screen.Home.route)
+        onReady.invoke()
     }
     Splash(alpha = alphaAnim.value)
 }
