@@ -6,7 +6,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface EarthquakeService {
-
     @GET("fdsnws/event/1/query?format=geojson")
     suspend fun getEarthquakes(
         @Query("starttime") startDate: String,

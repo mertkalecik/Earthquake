@@ -16,4 +16,6 @@ class EarthquakeRepository @Inject constructor(
 
     suspend fun fetchEarthquakes(startDate: String, endDate: String) =
         remote.getEarthquakes(startDate = startDate, endDate = endDate)
+
+    suspend fun getEarthquake(id: Long) = local.getEarthquake(id)
 }

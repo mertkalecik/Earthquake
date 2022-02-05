@@ -16,4 +16,7 @@ interface EarthquakeDao {
 
     @Query("DELETE FROM tbl_earthquake")
     suspend fun clear()
+
+    @Query("SELECT * FROM tbl_earthquake WHERE id=:id")
+    suspend fun getEarthquake(id: Long): EarthquakeModel
 }

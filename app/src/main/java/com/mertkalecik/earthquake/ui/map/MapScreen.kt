@@ -11,6 +11,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle.Event.*
 import androidx.lifecycle.LifecycleEventObserver
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -18,22 +19,31 @@ import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.mertkalecik.earthquake.base.EqSimpleToolbar
+import com.mertkalecik.earthquake.data.home.EarthquakeModel
 
 @Composable
-fun MapScreen() {
-    Map()
-}
+fun MapScreen(
+    viewModel: MapViewModel = hiltViewModel()
+) {
+    val state = viewModel.getUIState()
 
-@Composable
-fun Map() {
-    Column {
-        EqSimpleToolbar(title = "Map")
-        MapView()
+    state.value.uiState.earthquakeList?.let {
+        Map(it)
     }
 }
 
 @Composable
-fun MapView() {
+fun Map(
+    list: List<EarthquakeModel>
+) {
+    Column {
+        EqSimpleToolbar(title = "Map")
+        MapView(list = list)
+    }
+}
+
+@Composable
+fun MapView(list: List<EarthquakeModel>) {
     val context = LocalContext.current
     val mapView = remember { MapView(context) }
 
@@ -45,21 +55,22 @@ fun MapView() {
             mapView.apply {
                 getMapAsync { googleMap ->
                     googleMap.uiSettings.isZoomControlsEnabled = true
-                    googleMap.addMarker(
-                        MarkerOptions().position(
-                            LatLng(41.0082, 28.9784)
-                        )
-                    )
-                    googleMap.addMarker(
-                        MarkerOptions().position(
-                            LatLng(39.9333, 32.8597)
-                        )
-                    )
-                    googleMap.moveCamera(
-                        CameraUpdateFactory.newLatLngZoom(
-                            LatLng(39.9333, 32.8597), 5F
-                        )
-                    )
+                    list.let {
+                        it.forEach { model ->
+                            googleMap.addMarker(
+                                MarkerOptions().position(
+                                    LatLng(model.latitude, model.longitude)
+                                )
+                            )
+                        }
+                        it.first().let { coordinates ->
+                            googleMap.moveCamera(
+                                CameraUpdateFactory.newLatLngZoom(
+                                    LatLng(coordinates.latitude, coordinates.longitude), 3F
+                                )
+                            )
+                        }
+                    }
                 }
             }
         },

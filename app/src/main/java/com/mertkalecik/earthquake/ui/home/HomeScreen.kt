@@ -32,7 +32,7 @@ import com.mertkalecik.earthquake.base.Metrics.PADDING_8
 import com.mertkalecik.earthquake.base.Metrics.TEXT_SIZE_MEDIUM
 import com.mertkalecik.earthquake.data.home.EarthquakeModel
 import com.mertkalecik.earthquake.data.home.EarthquakeUIModel
-import com.mertkalecik.earthquake.data.login.HomeState
+import com.mertkalecik.earthquake.data.home.HomeState
 import com.mertkalecik.earthquake.navigation.Screen
 import com.mertkalecik.earthquake.ui.theme.Purple700
 
@@ -108,7 +108,7 @@ fun EarthquakeItem(
         shape = RoundedCornerShape(CORNER_RADIUS),
         elevation = ELEVATION,
         onClick = {
-            navHostController.navigate(Screen.Detail.route)
+            navHostController.navigate(Screen.Detail.route + "/${model.id}")
         }
     ) {
         Column {

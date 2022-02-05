@@ -20,8 +20,8 @@ class EarthquakeMapper @Inject constructor() : Mapper<EarthquakeResponse, Earthq
                     title = it.properties?.title ?: "",
                     place = it.properties?.place ?: "",
                     date = dateFormat.format(Date(it.properties?.time ?: 0)),
-                    latitude = it.geometry?.coordinates?.first() ?: 0.0,
-                    longitude = it.geometry?.coordinates?.get(1) ?: 0.0
+                    latitude = it.geometry?.coordinates?.get(1) ?: 0.0,
+                    longitude = it.geometry?.coordinates?.first() ?: 0.0
                 )
             } ?: listOf()
         )
