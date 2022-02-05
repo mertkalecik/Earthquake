@@ -1,6 +1,6 @@
 <p float="left">
-<img width="350" alt="Screen Shot 2022-02-05 at 23 48 29" src="https://user-images.githubusercontent.com/38656031/152658655-821f0a53-ae91-4dbc-952a-f9ca8944287c.png">
-<img width="350" alt="Screen Shot 2022-02-05 at 23 49 04" src="https://user-images.githubusercontent.com/38656031/152658657-2cf1f489-30f2-4344-8062-37105417c73f.png">
+<img width="430" alt="Home Screen" src="https://user-images.githubusercontent.com/38656031/152658766-c0816a56-3a03-49c8-83e8-09f6bd448444.png">
+<img width="430" alt="Map Screen" src="https://user-images.githubusercontent.com/38656031/152658657-2cf1f489-30f2-4344-8062-37105417c73f.png">
 </p>   
 
 # Earthquake
