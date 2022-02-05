@@ -30,7 +30,7 @@ It is an educational purpose project that includes following tech stack.
 ## Authors
 
 Mert Kalecik
-[Mail](mert.kalecik@hotmail.com)
+* contact: mert.kalecik@hotmail.com
 [@Linkedin](https://www.linkedin.com/in/mert-kalecik-129202b5)
 [@Twitter](https://twitter.com/mertkalecik)
 
