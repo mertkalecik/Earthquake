@@ -12,8 +12,6 @@ Earthquake app provides features below:
 ## Description
 
 It is an educational purpose project that includes following tech stack.
-
-## Getting Started
 * Kotlin
 * Jetpack Compose
 * MVVMi
