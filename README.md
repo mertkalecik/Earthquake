@@ -22,8 +22,8 @@ It is an educational purpose project that includes following tech stack.
 
 
 ### Dependencies
-* Kotlin Versiom: "1.5.31"
-* Compose Versiom: "1.0.5"
+* Kotlin Version: "1.5.31"
+* Compose Version: "1.0.5"
 * Hilt Version: "2.39.1"
 * Room Version: "2.4.1"
 * Retrofit Version: "2.9.0" 
