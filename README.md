@@ -1,5 +1,7 @@
-![](<img width="350" alt="Screen Shot 2022-02-05 at 23 48 29" src="https://user-images.githubusercontent.com/38656031/152658527-9c771158-d808-4f28-9f0c-27ab21b36e32.png">)  |  ![](<img width="350" alt="Screen Shot 2022-02-05 at 23 49 04" src="https://user-images.githubusercontent.com/38656031/152658529-9cc39a3b-266f-4c01-96ef-73a73c00e124.png">)
-
+<p float="left">
+<img width="350" alt="Screen Shot 2022-02-05 at 23 48 29" src="https://user-images.githubusercontent.com/38656031/152658655-821f0a53-ae91-4dbc-952a-f9ca8944287c.png">
+<img width="350" alt="Screen Shot 2022-02-05 at 23 49 04" src="https://user-images.githubusercontent.com/38656031/152658657-2cf1f489-30f2-4344-8062-37105417c73f.png">
+</p>   
 
 # Earthquake
 
